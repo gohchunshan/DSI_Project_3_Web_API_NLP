@@ -1,6 +1,8 @@
 # DSI Project 3 Web API NLP
-For General Assembly DSI course
-By: Goh Chun Shan, DSIF 7
+
+#### For General Assembly DSI course
+#### By: Goh Chun Shan, DSIF 7
+
 ---
 ### Project Instructions:
 
@@ -15,7 +17,7 @@ For project 3, your goal is two-fold:
 Pushshift's API is fairly straightforward. For example, if I want the posts from [`/r/boardgames`](https://www.reddit.com/r/boardgames), all I have to do is use the following url: https://api.pushshift.io/reddit/search/submission?subreddit=boardgames. A primer video on how to use the API: https://youtu.be/AcrjEWsMi_E
 
 ---
-### Project Description:
+### Introduction:
 
 Reddit is a social news, content, and discussions website. Posts are organised according to subject into user-created 'subreddits', which covers practically any topic imaginable. Members submit content (such as images, texts, and links) to subreddits, which can then be voted up ('upvote') or down ('downvote') by other members.
 
@@ -37,7 +39,20 @@ In this project, I create a classification model that predicts which subreddit a
 
 ##### Possible Extension of project: 
 If we have an indicator of severity of the cases, we can also train a model to pick out the most severe cases, and do surveillance on social media posts on potential people who are seeking help.
+----
+### Data Dictionary
 
+The combined dataset (before using feature extraction):
+
+|Feature|Type|Description|
+|---|---|---|---|
+|**subreddit**|*str*|which subreddit each post originates from| 
+|**title**|*str*|title of each reddit post|
+|**selftext**|*str*|text of each reddit post|
+|**fulltext**|*str*|combination of title and text of each reddit post|
+|**id**|*str*|created user id|
+
+Engineered one column that concatenates the title and selftext
 ---
 ### Exploratory Data Analysis
 
