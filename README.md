@@ -52,7 +52,6 @@ The combined dataset (before using feature extraction):
 |**fulltext**|*str*|combination of title and text of each reddit post|
 |**id**|*str*|created user id|
 
-Engineered one column that concatenates the title and selftext
 ---
 ### Exploratory Data Analysis
 
