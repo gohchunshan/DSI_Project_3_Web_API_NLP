@@ -45,7 +45,7 @@ If we have an indicator of severity of the cases, we can also train a model to p
 The combined dataset (before using feature extraction):
 
 |Feature|Type|Description|
-|---|---|---|---|
+|---|---|---|
 |**subreddit**|*str*|which subreddit each post originates from| 
 |**title**|*str*|title of each reddit post|
 |**selftext**|*str*|text of each reddit post|
