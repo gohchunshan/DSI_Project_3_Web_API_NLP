@@ -57,13 +57,14 @@ The combined dataset (before using feature extraction):
 ### Model Tuning and Insights
 
 **Model Comparison**
+
 In this project, we compared 2 models, Random Forest and Naive Bayes to find the best performing model. GridSearch was used to tune the hyperparameters. At the end, we also swapped the CountVectorizer for TF-IDF vectorizer to see if it gives a better performance based on our chosen key metric.
 
 **Key Metric used for model evaluation: $F_1$-score**
 
-The key metric we are using to evaluate the model is 'f1_score'. In this classification problem, we neither want to minimize false positives or negatives as both mental health conditions are equally important and we wish
+- The key metric we are using to evaluate the model is 'f1_score'. In this classification problem, we neither want to minimize false positives or negatives as both mental health conditions are equally important and we wish
 
-Instead of using 'Recall' or 'Precision', using 'f1_score' balances our false positives and false negatives. As either false positives or false negatives increase, the denominator increases while the numerator stays fixed, meaning our $F_1$-score decreases.
+- Instead of using 'Recall' or 'Precision', using 'f1_score' balances our false positives and false negatives. As either false positives or false negatives increase, the denominator increases while the numerator stays fixed, meaning our $F_1$-score decreases.
 
 
 
@@ -72,9 +73,9 @@ Instead of using 'Recall' or 'Precision', using 'f1_score' balances our false po
 |1|Random Forest|CountVectorizer|Tokenize|0.998|0.889|
 |2|Random Forest|CountVectorizer|Lemmatize|0.998|0.886|
 |3|Random Forest|CountVectorizer|Stemming|0.998|0.898|
-|4|Random Forest|Naive Bayes|Tokenize|0.998|0.888|
-|5|Random Forest|Naive Bayes|Lemmatize|0.998|0.888|
-|6|Random Forest|Naive Bayes|Stemming|0.999|0.897|
+|4|Naive Bayes|CountVectorizer|Tokenize|0.998|0.888|
+|5|Naive Bayes|CountVectorizer|Lemmatize|0.998|0.888|
+|6|Naive Bayes|CountVectorizer|Stemming|0.999|0.897|
 
 The best performing model was model 3, Random Forest using stemming, with a test F1-score of 0.898. All models had similar and high
 
@@ -96,5 +97,13 @@ We observe that the false positives and false negatives are quite balanced witho
 
 ---
 ### Final Conclusions and Recommendations
+
+**Conclusions**
+We noticed that all model performances were quite similar in terms of the key metric, F1 score. There is evidence of overfitting as the train score for all the 6 base models were close to 1.00 to begin with. 
+
+Through this project, it shows that it is possible to differentiate between social media posts about different mental health conditions with high accuracy. 
+
+**Recommendations**
+Other models (aside from Random Forest and Naive Bayes, e.g. Logistic Regression, KNN) can be evaluated to see whether they can better classify posts from the subreddits related to mental health conditions to a higher accuracy.
 
 
