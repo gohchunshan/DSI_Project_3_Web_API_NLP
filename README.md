@@ -68,7 +68,7 @@ In this project, we compared 2 models, Random Forest and Naive Bayes to find the
 
 
 
-|Model No.|Model|Vectorizer|Normalisation|train F1-score|test F1-score|
+|Model No.|Model Classifier|Vectorizer|Normalisation|train F1-score|test F1-score|
 |---|---|---|---|---|---|
 |1|Random Forest|CountVectorizer|Tokenize|0.998|0.889|
 |2|Random Forest|CountVectorizer|Lemmatize|0.998|0.886|
