@@ -88,6 +88,7 @@ Hence, this was chosen as our final model for deployment.
 
 Confusion matrix:
 |Confusion matrix|Predicted r/Social Anxiety|Predicted r/OCD|
+|---|---|---|
 |Actual r/Social Anxiety|2706|264|
 |Actual r/OCD|319|2651|
 
