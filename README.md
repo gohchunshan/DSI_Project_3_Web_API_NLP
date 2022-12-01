@@ -68,7 +68,7 @@ Instead of using 'Recall' or 'Precision', using 'f1_score' balances our false po
 
 
 |Model No.|Model|Vectorizer|Normalisation|train F1-score|test F1-score|
-|---|---|---|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|
 |1|Random Forest|CountVectorizer|Tokenize|0.998|0.889|
 |2|Random Forest|CountVectorizer|Lemmatize|0.998|0.886|
 |3|Random Forest|CountVectorizer|Stemming|0.998|0.898|
@@ -81,7 +81,7 @@ The best performing model was model 3, Random Forest using stemming, with a test
 Switching out the Vectorizer from CountVectorizer to TF-IDF Vectorizer (model 3, Random Forest using stemming) reaped a slightly improved result.
 
 |Model No.|Model|Vectorizer|Normalisation|train F1-score|test F1-score|
-|---|---|---|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|
 |3a|Random Forest|TF-IDF|Stemming|0.999|0.901|
 
 Hence, this was chosen as our final model for deployment.
