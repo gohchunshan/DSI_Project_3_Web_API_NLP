@@ -53,12 +53,47 @@ The combined dataset (before using feature extraction):
 |**id**|*str*|created user id|
 
 ---
-### Exploratory Data Analysis
 
-#### Conclusions
-
----
 ### Model Tuning and Insights
+
+**Model Comparison**
+In this project, we compared 2 models, Random Forest and Naive Bayes to find the best performing model. GridSearch was used to tune the hyperparameters. At the end, we also swapped the CountVectorizer for TF-IDF vectorizer to see if it gives a better performance based on our chosen key metric.
+
+**Key Metric used for model evaluation: $F_1$-score**
+
+The key metric we are using to evaluate the model is 'f1_score'. In this classification problem, we neither want to minimize false positives or negatives as both mental health conditions are equally important and we wish
+
+Instead of using 'Recall' or 'Precision', using 'f1_score' balances our false positives and false negatives. As either false positives or false negatives increase, the denominator increases while the numerator stays fixed, meaning our $F_1$-score decreases.
+
+
+
+|Model No.|Model|Vectorizer|Normalisation|train F1-score|test F1-score|
+|---|---|---|---|---|---|---|---|---|---|
+|1|Random Forest|CountVectorizer|Tokenize|0.998|0.889|
+|2|Random Forest|CountVectorizer|Lemmatize|0.998|0.886|
+|3|Random Forest|CountVectorizer|Stemming|0.998|0.898|
+|4|Random Forest|Naive Bayes|Tokenize|0.998|0.888|
+|5|Random Forest|Naive Bayes|Lemmatize|0.998|0.888|
+|6|Random Forest|Naive Bayes|Stemming|0.999|0.897|
+
+The best performing model was model 3, Random Forest using stemming, with a test F1-score of 0.898. All models had similar and high
+
+Switching out the Vectorizer from CountVectorizer to TF-IDF Vectorizer (model 3, Random Forest using stemming) reaped a slightly improved result.
+
+|Model No.|Model|Vectorizer|Normalisation|train F1-score|test F1-score|
+|---|---|---|---|---|---|---|---|---|---|
+|3a|Random Forest|TF-IDF|Stemming|0.999|0.901|
+
+Hence, this was chosen as our final model for deployment.
+
+Confusion matrix:
+|Confusion matrix|Predicted r/Social Anxiety|Predicted r/OCD|
+|Actual r/Social Anxiety|2706|264|
+|Actual r/OCD|319|2651|
+
+We observe that the false positives and false negatives are quite balanced without an imbalanced swing towards either Type I or Type II error.
 
 ---
 ### Final Conclusions and Recommendations
+
+
