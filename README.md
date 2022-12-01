@@ -38,7 +38,9 @@ Through this exercise, we can also raise awareness about mental health condition
 In this project, I create a classification model that predicts which subreddit a random post belongs to with the highest accuracy. To identify a production model, a variety of preliminary models would be tested and evaluated based on their accuracy scores (i.e. how many correct predictions they are able to make).
 
 ##### Possible Extension of project: 
+
 If we have an indicator of severity of the cases, we can also train a model to pick out the most severe cases, and do surveillance on social media posts on potential people who are seeking help.
+
 ----
 ### Data Dictionary
 
